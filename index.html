@@ -5,13 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
-</head>
+  <title>Static UUID App</title>
+  <script src="./device-uuid.js" type="text/javascript"></script>
+  <script>
+    function uuidFunction() {
+        var uuid = new DeviceUUID().get();
+      document.getElementById("thisuuid").innerHTML = uuid;
+    }
+  </script>
+   </head>
 
-<body>
+<body onload="uuidFunction()">
   <main>
-    <h1>Vanilla JavaScript App</h1>
+  <h1>What is my device UUID? <span id="thisuuid"></span></h1>
+ 
   </main>
+
 </body>
 
 </html>
